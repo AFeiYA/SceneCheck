@@ -40,4 +40,5 @@ def init_blendshape_check():
     else:
         cmds.confirmDialog( title=u'blendshapeCheck', message=u"所有blendshape初始值为0", button = u"确认")
 def bindpose_check():
+    #TODO check bing pose
     pass
