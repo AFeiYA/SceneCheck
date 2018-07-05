@@ -40,5 +40,16 @@ def init_blendshape_check():
     else:
         cmds.confirmDialog( title=u'blendshapeCheck', message=u"所有blendshape初始值为0", button = u"确认")
 def bindpose_check():
-    #TODO check bing pose
-    pass
+    #!/usr/bin/python
+# -*- coding: utf-8 -*-
+import unicodedata 
+import maya.cmds as cmds
+def bindpose_check():
+    warning=""
+    bindpose_nodes =  cmds.ls(type = "dagPose")
+    if (len(bindpose_nodes) > 1) :
+        cmds.confirmDialog( title=u'blendshapeCheck', message=u"有多个bindpose，请检检查bindpose是否正确！", button = u"确认")
+    if (len(bindpose_nodes) == 1) :
+        cmds.confirmDialog( title=u'blendshapeCheck', message=u"有1个bindpose，请使用goToBindPose命令检查初始姿势！", button = u"确认")
+    else:
+        cmds.confirmDialog( title=u'blendshapeCheck', message="场景中没有蒙皮信息", button = u"确认")
